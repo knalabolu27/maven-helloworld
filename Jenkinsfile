@@ -26,10 +26,12 @@ pipeline {
         stage ('Deploy') {
             steps {
                 sh '''
-                    sudo /apache-tomcat-9.0.22/bin/shutdown.sh
-                    sudo rm -rf /apache-tomcat-9.0.22/webapps/hello* /apache-tomcat-9.0.22/logs/*
-                    sudo cp target/*.war /apache-tomcat-9.0.22/webapps/hello-world.war
-                    sudo /apache-tomcat-9.0.22/bin/startup.sh
+       
+sudo /home/ec2-user/temp/apache-tomcat-9.0.30/bin/shutdown.sh
+sudo rm -rf /home/ec2-user/temp/apache-tomcat-9.0.30/webapps/hello* /home/ec2-user/temp/apache-tomcat-9.0.30/logs/*
+sudo cp target/*.war /home/ec2-user/temp/apache-tomcat-9.0.30/webapps/hello-world.war
+sudo /home/ec2-user/temp/apache-tomcat-9.0.30/bin/startup.sh
+
                 '''
             }
         }
